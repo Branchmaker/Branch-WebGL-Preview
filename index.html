@@ -80,11 +80,11 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/RawBranchWeb.loader.js";
       var config = {
-        dataUrl: buildUrl + "/RawBranchWeb.data.br",
-        frameworkUrl: buildUrl + "/RawBranchWeb.framework.js.br",
+        dataUrl: buildUrl + "/RawBranchWeb.data.unityweb",
+        frameworkUrl: buildUrl + "/RawBranchWeb.framework.js.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        codeUrl: buildUrl + "/RawBranchWeb.wasm.br",
-        companyName: "DefaultCompany",
+        codeUrl: buildUrl + "/RawBranchWeb.wasm.unityweb",
+        companyName: "BranchMaker",
         productName: "BranchmakerCORE",
         productVersion: "1.0",
         showBanner: unityShowBanner,
@@ -142,11 +142,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-  	unityInstance.SendMessage('StoryManager', 'LaunchWithBookKey', window.location.pathname.Replace('/',''));        
-/*fullscreenButton.onclick = () => {
+  	unityInstance.SendMessage('StoryManager', 'LaunchWithBookKey', window.location.pathname.Replace('/',''));   
+          fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
-*/	
         }).catch((message) => {
           alert(message);
         });
