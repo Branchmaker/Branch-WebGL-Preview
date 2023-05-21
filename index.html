@@ -78,12 +78,12 @@
   }
 
   var buildUrl = "/Build";
-  var loaderUrl = buildUrl + "/RawBranchWeb.loader.js";
+  var loaderUrl = buildUrl + "/Branch-web-tester.loader.js";
   var config = {
-    dataUrl: buildUrl + "/RawBranchWeb.data.unityweb",
-    frameworkUrl: buildUrl + "/RawBranchWeb.framework.js.unityweb",
+    dataUrl: buildUrl + "/Branch-web-tester.data.unityweb",
+    frameworkUrl: buildUrl + "/Branch-web-tester.framework.js.unityweb",
     streamingAssetsUrl: "StreamingAssets",
-  codeUrl: buildUrl + "/RawBranchWeb.wasm.unityweb",
+  codeUrl: buildUrl + "/Branch-web-tester.wasm.unityweb",
   companyName: "BranchMaker",
   productName: "BranchmakerCORE",
   productVersion: "1.0",
@@ -117,9 +117,8 @@
 
   if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     function resizeScreen() {
-      var w = Math.min(window.innerWidth, window.innerHeight * 3 / 4 * 9 / 10);
-      canvas.style.width = w + 'px';
-      canvas.style.height = w * 4/3 + 'px';
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
     }
 
     resizeScreen();
